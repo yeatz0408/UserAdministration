@@ -24,6 +24,7 @@ export default function Home() {
                             <th scope="col">名前</th>
                             <th scope="col">アカウントID</th>
                             <th scope="col">Eメール</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,6 +37,11 @@ export default function Home() {
                                     <td>{user.name}</td>
                                     <td>{user.username}</td>
                                     <td>{user.email}</td>
+                                    <td>
+                                        <button className="btn btn-primary mx-2">詳しく</button>
+                                        <button className="btn btn-outline-primary mx-2">変更</button>
+                                        <button className="btn btn-danger mx-2">削除</button>
+                                    </td>
                                 </tr>
 
                             ))
