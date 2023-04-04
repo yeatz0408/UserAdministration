@@ -8,7 +8,6 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 function App() {
   return (
     <div className="App">
-
       <Router>
         <Navbar />
         <Routes>
@@ -16,9 +15,6 @@ function App() {
           <Route exact path="/adduser" element={<AddUser/>} />
         </Routes>
       </Router>
-
-      
-      
     </div>
   );
 }
