@@ -46,7 +46,9 @@ export default function Home() {
                                     <td>{user.username}</td>
                                     <td>{user.email}</td>
                                     <td>
-                                        <button className="btn btn-primary mx-2">詳しく</button>
+                                        <Link 
+                                            to={`/viewuser/${user.id}`} 
+                                            className="btn btn-primary mx-2">詳しく</Link>
                                         <Link 
                                             to={`/edituser/${user.id}`} 
                                             className="btn btn-outline-primary mx-2">変更</Link>
