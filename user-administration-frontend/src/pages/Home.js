@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function Home() {
 
@@ -18,9 +20,27 @@ export default function Home() {
     }
 
     const deleteUser = async (id) => {
-        await axios.delete(`http://localhost:8080/user/${id}`)
+
+        await axios.delete(`http://localhost:8080/user/${id}`);
         loadUsers();
     }
+
+    const submit = (id) => {
+        confirmAlert({
+            message: '削除しますか？',
+            buttons: [
+              {
+                label: 'はい',
+                onClick: () => deleteUser(id)
+              },
+              {
+                label: 'いいえ',
+                //onClick: () => alert('Click No')
+              }
+            ]
+          });
+    }
+
 
     return (
         <div className='container'>
@@ -54,7 +74,7 @@ export default function Home() {
                                             className="btn btn-outline-primary mx-2">変更</Link>
                                         <button 
                                             className="btn btn-danger mx-2"
-                                            onClick={() => deleteUser(user.id)}
+                                            onClick={() => submit(user.id)}
                                         >削除</button>
                                     </td>
                                 </tr>
