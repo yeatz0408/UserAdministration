@@ -35,7 +35,6 @@ export default function Home() {
               },
               {
                 label: 'いいえ',
-                //onClick: () => alert('Click No')
               }
             ]
           });

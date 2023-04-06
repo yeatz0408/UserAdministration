@@ -33,13 +33,14 @@ export default function AddUser() {
                         <label htmlFor="Name" className="form-label">
                             名前
                         </label>
-                        <input
+                        <input 
                             type={"text"}
                             className="form-control"
                             placeholder="名前を入力してください。"
                             name="name"
                             value={name}
-                            onChange={(e) => onInputChange(e)}
+                            onChange={(e) => onInputChange(e)} 
+                            required
                         />
                     </div>
                     <div className="mb-3">
@@ -52,7 +53,8 @@ export default function AddUser() {
                             placeholder="アカウントIDを入力してください。"
                             name="username"
                             value={username}
-                            onChange={(e) => onInputChange(e)}
+                            onChange={(e) => onInputChange(e)} 
+                            required
                         />
                     </div>
                     <div className="mb-3">
@@ -65,7 +67,8 @@ export default function AddUser() {
                             placeholder="Eメールを入力してください。"
                             name="email"
                             value={email}
-                            onChange={(e) => onInputChange(e)}
+                            onChange={(e) => onInputChange(e)} 
+                            required
                         />
                     </div>
                     <button type="submit" className="btn btn-outline-primary px-4">登録</button>
