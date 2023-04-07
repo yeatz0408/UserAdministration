@@ -2,6 +2,8 @@ package com.gmail.yeatz0408.UserAdministrationBackend.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,7 +26,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("/user")
-    User newUser(@RequestBody User newUser) {
+    User newUser(@Valid @RequestBody User newUser) {
         return userRepository.save(newUser);
     }
 
